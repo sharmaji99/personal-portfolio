@@ -23,6 +23,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("bYv-ZwAYuj6nXmM_h"); // Your EmailJS public key
+    })();
+  </script>
 </head>
 
 <body>
@@ -968,6 +974,7 @@
     <h2 class="h2 article-title">Contact</h2>
   </header>
 
+  <!-- Map Section -->
   <section class="mapbox" data-mapbox>
     <figure>
       <iframe
@@ -976,32 +983,31 @@
     </figure>
   </section>
 
+  <!-- Contact Form Section -->
   <section class="contact-form">
-
     <h3 class="h3 form-title">Get in Touch</h3>
 
-    <form action="#" class="form" data-form>
-
+    <!-- Contact Form -->
+    <form id="contact-form" class="form" novalidate>
       <div class="input-wrapper">
-        <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input value="Udit Sharma">
-
-        <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input value="udit.sharma@example.com">
+        <input type="text" name="fullname" class="form-input" placeholder="Full name" required />
+        <input type="email" name="email" class="form-input" placeholder="Email address" required />
       </div>
 
-      <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+      <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
 
-      <button class="form-btn" type="submit" data-form-btn>
+      <button class="form-btn" type="submit">
         <ion-icon name="paper-plane"></ion-icon>
         <span>Send Message</span>
       </button>
-
     </form>
 
+    <div id="success-message" class="popup-success">
+  <span>✅ Message sent successfully!</span>
+</div>
   </section>
 
 </article>
-
-
     </div>
 
   </main>

@@ -167,3 +167,37 @@ for (let i = 0; i < navigationLinks.length; i++) {
     link.click();
     document.body.removeChild(link);
   }
+
+
+ const formMsg = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+formMsg.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Validate all fields
+  if (!formMsg.checkValidity()) {
+    formMsg.reportValidity();
+    return;
+  }
+
+  // Send form data with EmailJS
+  emailjs.sendForm("service_q80lf1n", "template_utu159i", this)
+    .then(function(response) {
+      // Show success message popup
+      successMessage.style.display = "block";
+
+      // Disable all inputs & buttons in form
+      [...formMsg.elements].forEach(el => el.disabled = true);
+
+      // Wait 3 seconds, then hide message and refresh page
+      setTimeout(() => {
+        successMessage.style.display = "none";
+        window.location.reload();
+      }, 3000);
+    }, function(error) {
+      alert("Failed to send message: " + JSON.stringify(error));
+    });
+});
+
+
