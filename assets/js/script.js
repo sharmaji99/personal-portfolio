@@ -157,3 +157,13 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+ function downloadResume() {
+    const link = document.createElement('a');
+    link.href = 'assets/docs/UDIT_SHARMA_CV_S1.pdf';
+    link.download = 'Udit_Sharma_Resume.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
