@@ -1879,4 +1879,31 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+
+ .download-resume-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.download-resume-btn button {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: var(--fw-500);
+  font-size: var(--fs-4);
+  cursor: pointer;
+  box-shadow: var(--shadow-2);
+  transition: background var(--transition-1);
+}
+
+.download-resume-btn button:hover {
+  background: var(--vegas-gold);
+}
+
+
+
 }
